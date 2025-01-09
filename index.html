@@ -5,8 +5,60 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SECE2025</title>
     <link rel="stylesheet" href="./HTML_CSS/temp.css">
+    <style>
+        #test{
+            margin-left:40%;
+            width:200px;
+            height:200px;
+            background-color: rgb(95, 151, 160);
+            color:white;
+            text-align: center;
+            margin-top: 100px;
+        }
+        #d{
+            display:grid;
+            grid-template-columns: repeat(3,1fr);
+            padding:100px 50px 100px 50px;
+            grid-gap:8px;
+            margin:20px;
+            background-color: lavender;
+        }
+        #d div{
+            border:5px solid purple;
+            background-color: plum;
+            padding:10px;
+            text-align: center;
+        }
+        #test h1{
+            transform:translate(0px,50px);
+        }
+        @media screen and ((max-width: 600px) or (min-width:1600px)){
+            #d{
+            display:grid;
+            grid-template-columns: repeat(2,1fr);
+            padding:100px 50px 100px 50px;
+            grid-gap:8px;
+            margin:20px;
+            background-color:khaki;
+        }
+        }
+    </style>
 </head>
 <body>
-    <h1>Training in SECE for CSE</h1>
+    <h1 id="h">Training in SECE for CSE</h1>
+    <div id="test">
+        <h1>This is Grid Example</h1>
+    </div>
+    <div id="d">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+        <div>7</div>
+        <div>8</div>
+        <div>9</div>
+    </div>
 </body>
 </html>
