@@ -56,3 +56,41 @@ var m="5"
 console.log(n==m)
 //=== consider type also
 console.log(n===m)
+var c=10
+var d=2
+console.log(c&d)
+console.log(c|d)
+console.log(c^d)
+console.log(c>>2)
+console.log(c<<2)
+console.log(~c)
+//advanced looping
+var a=[10,20,30]
+var b={"count":70,"abs":1}
+for(let i in a)
+{
+    console.log(i,a[i]) 
+}
+for(let i in b){
+    console.log(b,b[i])
+}
+for(let i in b){
+    console.log(b,b.i)
+}
+s=new Set(["hello",1,2,"sece","44",2,"hello","sece",5])
+for(let i in s){
+    console.log(s.i)
+}
+for(let i of a)
+{
+    console.log(i)
+}
+for(let [i,j] of Object.entries(b)){
+console.log(i,j);
+}
+//function with arguments with return type
+function sece(dept){
+    console.log("Welcome to ",dept)
+    return "Section A"
+}
+console.log(sece("CSE"))
