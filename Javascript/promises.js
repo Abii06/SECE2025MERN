@@ -1,52 +1,90 @@
-function promiseEg(flag){
-    return new Promise(function(resolve,reject){
-        if(flag===1){
-            resolve("This is a promise resolve")
-        }
-        else if(flag===0){
-            reject("This is a promise reject")
-        }
-        
+// function promiseEg(flag)
+// {
+//     return new Promise(function(resolve,reject)
+//     {
+// resolve("this is a promise example")
+// if(flag===1)
+// {
+//     resolve("this is a promise resolve example")
+// }
+// else if(flag===0)
+// {
+//     reject("this is promise reject example")
+// }
+//     })
+// }
+// promiseEg(1).then((res)=>
+// {
+// console.log(res)
+// }).catch((rej)=>
+// {
+// console.log(rej)
+// })
+
+//promise -location finder example
+//pass 2 things -melbourne,2000
+// locationFinder("Melbourne",2000)
+// locationFinder=(location,time)=>{
+//      new Promise((locFound,locNotfound)=>{
+//         if(isLocationValid(location,time))
+// {
+//      locFound(location,"Foundin",time,"secs")
+// }
+// else{
+//     return locNotfound(location,"NotFound in",time,"secs")
+// }
+//     })
+// }
+// function isLocationValid(loc,time)
+// {
+//     location="Melbourne"
+//     t=2000
+//     if(loc===location && time<=t)
+//     {
+//         return true
+//     }
+//     else{
+//         return false
+//     }
+// }
+// locationFinder("Melbourne",2000).then((res)=>
+// {
+//     console.log(res)
+// }).catch(err)
+// {
+//     console.log(err)
+// }
+
+//instagram example
+commentpost=async()=>{
+    return new Promise((commentpost)=>
+    {
+setTimeout(()=>
+{
+  commentpost("commenting the post")  
+},5000);
+    });
+};
+async function likecode(){
+    return new Promise((linkingpost)=>
+    {
+setTimeout(()=>
+{
+  linkingpost("liking the post")  
+},5000)
     })
 }
-//console.log(promiseEg(0))
-promiseEg(7).then((res)=>{
-    console.log(res)
-}).catch((rej)=>{
-    console.log(rej)
-})
-
-//promise- location finder example
-//pass2 things- Melboune,2000
-
-locationFinder = (location,time)=>{
-    return new Promise((locationFound,locationNotFound) =>{
+async function Createpost()
+{
+    var post=new Promise((cPost)=>
+    {
         setTimeout(()=>{
-            if(isLocationValid(location,time)){
-                locationFound([location,"Found in",time,"millisecs"]);
-            }
-            else{
-                locationNotFound([location,"Not Found in",time,"millisecs"]);
-            }
-        },time)
-        
+cPost("Post created succesffuly")
+    },5000)
     })
-    
+    var [post,like,comment]=await Promise.all([post,likecode(),commentpost()])
+    console.log(post)
+    console.log(like)
+    console.log(comment)
 }
-
-function isLocationValid(loc,time){
-    location = "melboune";
-    t = 2000;
-    if(loc === location && time <= t){
-        return true;
-    }
-    else{
-        return false;
-    }
-}
-
-locationFinder("melboune",2001).then((result) =>{
-    console.log(result);
-}).catch((err) =>{
-    console.log(err);
-})
+Createpost()
