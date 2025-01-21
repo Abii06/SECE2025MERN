@@ -5,7 +5,7 @@ const Contact=()=>{
         return setNum(num+1)
     }
     return(
-        <div>
+        <div style={{textAlign:"center"}}>
             <h2>This is Contact Component</h2>
             <h3>This is a State Example</h3>
             <h3>Number is {num}</h3>

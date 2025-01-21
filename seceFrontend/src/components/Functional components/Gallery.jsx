@@ -1,6 +1,6 @@
 const Gallery = (props) =>{
     return(
-        <div>
+        <div style={{textAlign:"center"}}>
             <h2>{props.page} Page</h2>
             <img src="./src/assets/logo.png" alt="SECE LOGO"/>
             <h2>The image is {props.image}</h2>
