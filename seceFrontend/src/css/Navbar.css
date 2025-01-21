@@ -10,3 +10,14 @@ ol{
     font-size: large;
     font-weight: bold;
 }
+.link{
+    text-decoration: none;
+    color:white;
+    padding:4px;
+}
+.link:hover{
+
+    background-color:white;
+    color: rgb(9, 13, 135);
+    border-radius: 10px;
+}
