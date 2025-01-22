@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const Signup = () => {
+const Login = () => {
   
   const [name, setName] = useState('');
   const [password, setPassword] = useState('');
@@ -15,7 +15,7 @@ const Signup = () => {
 
   return (
     <div>
-      <h1>SignUp Page</h1>
+      <h1>Login Page</h1>
       <form onSubmit={handleSubmit}>
         <div>
           <h3>Enter the Name</h3>
@@ -49,4 +49,4 @@ const Signup = () => {
   );
 };
 
-export default Signup;
+export default Login;
