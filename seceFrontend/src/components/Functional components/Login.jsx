@@ -3,19 +3,19 @@ import{Link} from 'react-router-dom';
 const Login=()=>{
     return(
         <div style={{ textAlign: "center" }} >
-            <h1 >Signup</h1>
+            <h1>LogIn</h1>
             <div className="container">
-                <div>
+            <div>
             <label for="username" required>Username: </label>
             <input type="text" id="username" />
-            <br /><br />
+            <br/><br/>
             <label for="email">Email: </label>
             <input type="email" id="email" />
-            <br /><br />
+            <br/><br/>
             <label for="password">Password: </label>
             <input type="password" id="password" />
-            <br /><br />
-            <Link to="/home"><button>LOGIN</button></Link>
+            <br/><br/>
+            <Link to="/home"><button className='button'>LOGIN</button></Link>
             </div>
             </div>
         </div>

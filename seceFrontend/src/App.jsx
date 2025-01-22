@@ -8,6 +8,7 @@ import Login from "./components/Functional components/Login"
 import Navbar1 from "./components/Functional components/Navbar1"
 import UseState from "./components/Functional components/Hooks/UseState"
 import UseEffect from "./components/Functional components/Hooks/UseEffect"
+import UseReducer from "./components/Functional components/Hooks/UseReducer"
 import UseEffectAPI from "./components/Functional components/Hooks/UseEffectAPI"
 import {BrowserRouter , Routes, Route} from "react-router-dom"
 function App(){
@@ -17,13 +18,14 @@ function App(){
       <Routes>
         <Route path="/signup" element={<><Navbar1/><SignUp/></>}></Route>
         <Route path="/" element={<><Navbar1/><Login/></>}></Route>
-      
+        <Route path="/login" element={<><Navbar1/><Login/></>}></Route>
         <Route path="/home" element={<><Navbar/><Home/></>}></Route>
         <Route path="/about" element={<><Navbar/><About/></>}></Route>
         <Route path="/gallery" element={<><Navbar/><Gallery image="SECE LOGO" page="Gallery"/></>}></Route>
         <Route path="/contact" element={<><Navbar/><Contact/></>}></Route>
         <Route path="/usestate" element={<><Navbar/><UseState/></>}></Route>
         <Route path="/useeffect" element={<><Navbar/><UseEffect/></>}></Route>
+        <Route path="/usereducer" element={<><Navbar/><UseReducer/></>}></Route>
         <Route path="/useapi" element={<><Navbar/><UseEffectAPI/></>}></Route>
       </Routes>
       {/*<Home/><hr/>
