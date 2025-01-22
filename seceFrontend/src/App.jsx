@@ -8,6 +8,7 @@ import Login from "./components/Functional components/Login"
 import Navbar1 from "./components/Functional components/Navbar1"
 import UseState from "./components/Functional components/Hooks/UseState"
 import UseEffect from "./components/Functional components/Hooks/UseEffect"
+import UseEffectAPI from "./components/Functional components/Hooks/UseEffectAPI"
 import {BrowserRouter , Routes, Route} from "react-router-dom"
 function App(){
   return(
@@ -22,7 +23,8 @@ function App(){
         <Route path="/gallery" element={<><Navbar/><Gallery image="SECE LOGO" page="Gallery"/></>}></Route>
         <Route path="/contact" element={<><Navbar/><Contact/></>}></Route>
         <Route path="/usestate" element={<><Navbar/><UseState/></>}></Route>
-        <Route path="/useeffect"element={<><Navbar/><UseEffect/></>}></Route>
+        <Route path="/useeffect" element={<><Navbar/><UseEffect/></>}></Route>
+        <Route path="/useapi" element={<><Navbar/><UseEffectAPI/></>}></Route>
       </Routes>
       {/*<Home/><hr/>
       <About/><hr/>
