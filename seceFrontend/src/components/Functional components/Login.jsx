@@ -1,52 +1,24 @@
-import React, { useState } from 'react';
+import{Link} from 'react-router-dom';
 
-const Login = () => {
-  
-  const [name, setName] = useState('');
-  const [password, setPassword] = useState('');
-
-  
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    console.log('Name:', name);
-    console.log('Password:', password);
-    
-  };
-
-  return (
-    <div>
-      <h1>Login Page</h1>
-      <form onSubmit={handleSubmit}>
-        <div>
-          <h3>Enter the Name</h3>
-          <label htmlFor="name">Name:</label>
-          <input
-            type="text"
-            id="name"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-            required
-          />
+const Login=()=>{
+    return(
+        <div style={{ textAlign: "center" }} >
+            <h1 >Signup</h1>
+            <div className="container">
+                <div>
+            <label for="username" required>Username: </label>
+            <input type="text" id="username" />
+            <br /><br />
+            <label for="email">Email: </label>
+            <input type="email" id="email" />
+            <br /><br />
+            <label for="password">Password: </label>
+            <input type="password" id="password" />
+            <br /><br />
+            <Link to="/home"><button>LOGIN</button></Link>
+            </div>
+            </div>
         </div>
-        
-        <div>
-          <h3>Enter the Password</h3>
-          <label htmlFor="password">Password:</label>
-          <input
-            type="password"
-            id="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            required
-          />
-        </div>
-        
-        <div>
-          <button type="submit">Submit</button>
-        </div>
-      </form>
-    </div>
-  );
-};
-
+    )
+}
 export default Login;

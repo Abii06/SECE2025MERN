@@ -1,22 +1,28 @@
-import ClassCompEg from "./components/Class components/ClassCompEG"
 import About from "./components/Functional components/About"
 import Home from "./components/Functional components/Home"
 import Gallery from "./components/Functional components/Gallery"
 import Contact from "./components/Functional components/Contact"
 import SignUp from "./components/Functional components/Signup"
 import Navbar from "./components/Functional components/Navbar"
+import Login from "./components/Functional components/Login"
+import Navbar1 from "./components/Functional components/Navbar1"
+import UseState from "./components/Functional components/Hooks/UseState"
+import UseEffect from "./components/Functional components/Hooks/UseEffect"
 import {BrowserRouter , Routes, Route} from "react-router-dom"
 function App(){
   return(
     <div>
       <BrowserRouter>
-      <Navbar/>
       <Routes>
-        <Route path="/" element={<Home/>}></Route>
-        <Route path="/about" element={<About/>}></Route>
-        <Route path="/gallery" element={<Gallery image="SECE LOGO" page="Gallery"/>}></Route>
-        <Route path="/contact" element={<Contact/>}></Route>
-        <Route path="/signup" element={<SignUp/>}></Route>
+        <Route path="/signup" element={<><Navbar1/><SignUp/></>}></Route>
+        <Route path="/" element={<><Navbar1/><Login/></>}></Route>
+      
+        <Route path="/home" element={<><Navbar/><Home/></>}></Route>
+        <Route path="/about" element={<><Navbar/><About/></>}></Route>
+        <Route path="/gallery" element={<><Navbar/><Gallery image="SECE LOGO" page="Gallery"/></>}></Route>
+        <Route path="/contact" element={<><Navbar/><Contact/></>}></Route>
+        <Route path="/usestate" element={<><Navbar/><UseState/></>}></Route>
+        <Route path="/useeffect"element={<><Navbar/><UseEffect/></>}></Route>
       </Routes>
       {/*<Home/><hr/>
       <About/><hr/>
