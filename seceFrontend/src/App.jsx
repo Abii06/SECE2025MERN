@@ -9,7 +9,10 @@ import Navbar1 from "./components/Functional components/Navbar1"
 import UseState from "./components/Functional components/Hooks/UseState"
 import UseEffect from "./components/Functional components/Hooks/UseEffect"
 import UseReducer from "./components/Functional components/Hooks/UseReducer"
+import UseRef from "./components/Functional components/Hooks/UseRef"
 import UseEffectAPI from "./components/Functional components/Hooks/UseEffectAPI"
+import UseMemo from "./components/Functional components/Hooks/UseMemo"
+import UseCallBack from "./components/Functional components/UseCallback"
 import {BrowserRouter , Routes, Route} from "react-router-dom"
 function App(){
   return(
@@ -27,6 +30,9 @@ function App(){
         <Route path="/useeffect" element={<><Navbar/><UseEffect/></>}></Route>
         <Route path="/usereducer" element={<><Navbar/><UseReducer/></>}></Route>
         <Route path="/useapi" element={<><Navbar/><UseEffectAPI/></>}></Route>
+        <Route path="/useref" element={<><Navbar/><UseRef/></>}></Route>
+        <Route path="/usememo" element={<><Navbar/><UseMemo/></>}></Route>
+        <Route path="/usecallback" element={<><Navbar/><UseCallBack/></>}></Route>
       </Routes>
       {/*<Home/><hr/>
       <About/><hr/>

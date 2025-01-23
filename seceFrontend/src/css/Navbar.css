@@ -5,7 +5,7 @@ ol{
     list-style-type: none;
     margin:0; 
     padding:10px;
-    background-color: rgb(9, 13, 135);
+    background-color:rgb(9, 13, 135);
     color:white;
     font-size: large;
     font-weight: bold;
@@ -20,4 +20,29 @@ ol{
     background-color:white;
     color: rgb(9, 13, 135);
     border-radius: 10px;
+}
+.dropdown {
+    position: relative;
+}
+
+.dropdown-menu {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: rgb(38, 94, 237);
+    width: 200px;
+    display: block;
+    border-radius: 5px;
+}
+.dropdown-menu li {
+    padding: 10px;
+}
+.dropdown-menu{
+    display: none;
+}
+.dropdown:hover .dropdown-menu {
+    display: block;
 }
