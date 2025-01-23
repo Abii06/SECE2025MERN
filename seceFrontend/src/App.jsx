@@ -11,8 +11,8 @@ import UseEffect from "./components/Functional components/Hooks/UseEffect"
 import UseReducer from "./components/Functional components/Hooks/UseReducer"
 import UseRef from "./components/Functional components/Hooks/UseRef"
 import UseEffectAPI from "./components/Functional components/Hooks/UseEffectAPI"
-import UseMemo from "./components/Functional components/Hooks/useMemo"
-import UseCallBack from "./components/Functional components/UseCallback"
+import UseMemo from "./components/Functional components/Hooks/UseMemo"
+import UseCallBack from "./components/Functional components/Hooks/UseCallback"
 import {BrowserRouter , Routes, Route} from "react-router-dom"
 function App(){
   return(
