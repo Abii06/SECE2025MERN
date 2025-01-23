@@ -7,8 +7,8 @@ const UseMemo=()=>{
     var [num,setNum]=useState(0)
     var [dark,setDark]=useState(false)
 var styling={
-    backgroundColor:dark?"black":"white",
-    color:dark?"white":"black"
+    backgroundColor:dark?"white":"#9B7EBD",
+    color:dark?"black":"white"
 }
 var doublingUpANum=useMemo(()=>{
     return slowFunction(num)
@@ -17,8 +17,8 @@ var doublingUpANum=useMemo(()=>{
         <div style={styling}>
             <div style={{ textAlign: "center" }}>
             <h1>UseMemo Hook</h1>
-            <input type="number" value={num} onChange={(e)=>setNum(e.target.value)}/>
-            <button onClick={()=>{setDark(currTheme=>!currTheme)}}>Toggle</button>
+            <input type="number" value={num} onChange={(e)=>setNum(e.target.value)}/><br/><br/>
+            <button onClick={()=>{setDark(currTheme=>!currTheme)}} className="button">Toggle</button>
             <h3>The number is {doublingUpANum}</h3>
             </div>
         </div>
