@@ -13,6 +13,7 @@ import UseRef from "./components/Functional components/Hooks/UseRef"
 import UseEffectAPI from "./components/Functional components/Hooks/UseEffectAPI"
 import UseMemo from "./components/Functional components/Hooks/UseMemo"
 import UseCallBack from "./components/Functional components/Hooks/UseCallback"
+import ReactLifecycleMethods from "./components/Class components/ReactLifecycleMethods"
 import {BrowserRouter , Routes, Route} from "react-router-dom"
 function App(){
   return(
@@ -33,6 +34,7 @@ function App(){
         <Route path="/useref" element={<><Navbar/><UseRef/></>}></Route>
         <Route path="/usememo" element={<><Navbar/><UseMemo/></>}></Route>
         <Route path="/usecallback" element={<><Navbar/><UseCallBack/></>}></Route>
+        <Route path="/reactlm" element={<><Navbar/><ReactLifecycleMethods/></>}></Route>
       </Routes>
       {/*<Home/><hr/>
       <About/><hr/>
