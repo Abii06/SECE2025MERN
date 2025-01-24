@@ -25,8 +25,10 @@ const Navbar=()=>{
         <li><Link to="/useref" className="link">UseRef</Link></li>
         <li><Link to="/usememo" className="link">UseMemo</Link></li>
         <li><Link to="/usecallback" className="link">UseCallBack</Link></li>
+        <li><Link to="/student"className="link">Student</Link></li>
         </ul>)}
         </div>
+        <li><Link to="/memo" className="link">React.memo</Link></li>
         <li><Link to="/contact" className="link">Contact</Link></li>
 </ol>
         </nav>

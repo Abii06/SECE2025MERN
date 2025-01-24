@@ -14,6 +14,8 @@ import UseEffectAPI from "./components/Functional components/Hooks/UseEffectAPI"
 import UseMemo from "./components/Functional components/Hooks/UseMemo"
 import UseCallBack from "./components/Functional components/Hooks/UseCallback"
 import ReactLifecycleMethods from "./components/Class components/ReactLifecycleMethods"
+import Student from "./components/Functional components/Hooks/UseContext"
+import Memo from "./components/Functional components/Memoization/Memo"
 import {BrowserRouter , Routes, Route} from "react-router-dom"
 function App(){
   return(
@@ -35,6 +37,8 @@ function App(){
         <Route path="/usememo" element={<><Navbar/><UseMemo/></>}></Route>
         <Route path="/usecallback" element={<><Navbar/><UseCallBack/></>}></Route>
         <Route path="/reactlm" element={<><Navbar/><ReactLifecycleMethods/></>}></Route>
+        <Route path="/student" element={<><Navbar/><Student/></>}></Route>
+        <Route path="/memo" element={<><Navbar/><Memo/></>}></Route>
       </Routes>
       {/*<Home/><hr/>
       <About/><hr/>
