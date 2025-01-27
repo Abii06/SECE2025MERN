@@ -19,6 +19,7 @@ import Memo from "./components/Functional components/Memoization/Memo"
 import LazyloadingWithsuspense from "./components/Functional components/Memoization/LazyloadingWithsuspense"
 import UseLocalStorage from "./components/Functional components/Hooks/UseLocalStorage"
 import HoC from "./components/Functional components/HoC/HoC"
+import DarkModeToggle from "./components/Functional components/Hooks/DarkModeToggle"
 import {BrowserRouter , Routes, Route} from "react-router-dom"
 function App(){
   return(
@@ -45,6 +46,7 @@ function App(){
         <Route path="/lazy" element={<><Navbar/><LazyloadingWithsuspense/></>}></Route>
         <Route path="/usecustom" element={<><Navbar/><UseLocalStorage/></>}></Route>
         <Route path="/hoc" element={<><Navbar/><HoC/></>}></Route>
+        <Route path="/toggle" element={<><Navbar/><DarkModeToggle/></>}></Route>
       </Routes>
       {/*<Home/><hr/>
       <About/><hr/>
