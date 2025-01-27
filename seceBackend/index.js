@@ -17,7 +17,26 @@ app.get('/', (req, res) => {
 app.get('/static', (req, res) => {
     res.sendFile(path.join(__dirname,"index.html"))
 });
-
+app.post('/signup',(req,res)=>{
+var{firstName,lastName,userName,email,password}=req.body
+try{
+    const newSignup=new Signup({
+    firstName:firstName,
+    lastName:lastName,
+    userName:userName,
+    email:email,
+    password:password
+})
+newSignup.save()
+res.status(201).send("Values Received")
+}
+catch(err) {
+    res.status(400).send("Signup Unsuccessful",err)
+}
+/*console.log(req.body)
+console.log(firstName,lastName,userName,ElementInternals,password)
+res.json("Values received");*/
+})
 
 app.get('/getsignupdet',async(request,res)=>{
     varsignUpdet=await Signup.find()
