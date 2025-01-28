@@ -8,3 +8,4 @@ const signupSchema = mdb.Schema({
 });
 const signup_schema = mdb.model("signup", signupSchema);
 module.exports= signup_schema;
+
