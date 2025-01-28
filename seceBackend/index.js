@@ -3,10 +3,12 @@ const path = require('path');
 const mdb = require('mongoose');
 const dotenv = require('dotenv');
 const Signup = require("./models/signupSchema");
-
+const bcrypt=require("bcrypt")
+const cors = require("cors")
 dotenv.config();
 const app = express();
 app.use(express.json());
+app.use(cors())
 
 mdb.connect(process.env.MONGODB_URL).then(() => {
     console.log("MongoDB Connection Successful");
@@ -24,18 +26,20 @@ app.get('/static', (req, res) => {
 
 app.post('/signup', async (req, res) => {
     const { firstName, lastName, userName, email, password } = req.body;
+    var hashedPassword= await bcrypt.hash(password,10)
+   // console.log(hashedPassword)
     try {
         const newSignup = new Signup({
-            firstName,
-            lastName,
-            userName,
-            email,
-            password
+            firstName:firstName,
+            lastName:lastName,
+            userName:userName,
+            email:email,
+            password:hashedPassword
         });
         await newSignup.save();
         res.status(201).send("SignUp Successful");
     } catch (err) {
-        res.status(400).send(`SignUp Unsuccessful: ${err.message}`);
+        res.status(400).send("SignUp Unsuccessful");
     }
 });
 
@@ -77,7 +81,7 @@ app.post('/updatedet', async (req, res) => {
         console.log(updateRec)
         res.json("Record Updated");
     } catch (err) {
-        res.status(500).send(`Error updating record: ${err.message}`);
+        res.status(500).send("Error updating record");
     }
 });
 
