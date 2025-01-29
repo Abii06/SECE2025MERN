@@ -13,9 +13,13 @@ try{const req= await axios.post("http://localhost:3001/login",{
     email:email,
     password:password
 })
-//console.log(req)
-alert(req.data)
-navigate("/home")
+//console.log(req)   
+alert(req.data.message);
+    if (req.data.IsLoggedIn) {
+        navigate("/home");
+        localStorage.setItem("token", response.data.token); 
+       
+    }
 }
 catch(err){console.log(err)
     }}

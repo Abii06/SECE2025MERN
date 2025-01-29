@@ -17,6 +17,20 @@ mdb.connect(process.env.MONGODB_URL).then(() => {
     console.log("MongoDB Connection Unsuccessful", err);
 });
 
+const verifyToken=(req,res,next)=>{
+    console.log("Middleware is Trigerred")
+    var token = req.headers.authorization
+    if(!token) {res.send("Request Denied")}
+    try{
+const user=jwt.verify(token,process.env.SECRET_KEY)
+console.log(user)
+req.user = user
+    }catch(err) {
+        console.log(err)
+        res.send("Error in Token")
+    }
+    next()
+}
 app.get('/', (req, res) => {
     res.send("Welcome to backend my friend\nYour roller coaster starts now!\nFasten your codebase so you can catch up with what's being taught.");
 });
@@ -24,6 +38,11 @@ app.get('/', (req, res) => {
 app.get('/static', (req, res) => {
     res.sendFile(path.join(__dirname, "index.html"));
 });
+
+app.get("/json", verifyToken,(req, res) => {
+    console.log("Inside Json Route")
+res.json({message:"This is a Middleware Check",user:req.user.userName})
+})
 
 app.post('/signup', async (req, res) => {
     const { firstName, lastName, userName, email, password } = req.body;
@@ -50,21 +69,26 @@ app.post("/login", async (req, res) => {
         const user = await Signup.findOne({ email });
         //console.log(user)
         if (user) {
-            
+            const payload={
+email:user.email,
+userName:user.userName
+}
+            const token=jwt.sign(payload,process.env.SECRET_KEY,{expiresIn:"1hr"})
+            console.log(token)
             var isPasswordCorrect= await bcrypt.compare(password, user.password)
             console.log(password,user.password);
             if (isPasswordCorrect) {
-            res.status(200).send("Login Successful");
+            res.status(200).json({message:"Login Successful",IsLoggedIn:true,token:token});
         }
         else{
-            res.status(200).send("Login Unsuccessful");
+            res.status(200).json({message:"Login Unsuccessful",IsLoggedIn:false});
         }
         }
          else {
-            res.status(401).send("User not found please signup!");
+            res.status(401).json({message:"User not found please signup!",IsLoggedIn:false});
         }
     } catch (err) {
-        res.status(500).send({message:"Error during login"});
+        res.status(500).json({message:"Error during login"});
     }
 });
 
