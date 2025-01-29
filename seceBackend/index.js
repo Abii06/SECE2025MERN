@@ -5,6 +5,7 @@ const dotenv = require('dotenv');
 const Signup = require("./models/signupSchema");
 const bcrypt=require("bcrypt")
 const cors = require("cors")
+const jwt=require("jsonwebtoken")
 dotenv.config();
 const app = express();
 app.use(express.json());
@@ -47,16 +48,23 @@ app.post("/login", async (req, res) => {
     const { email, password } = req.body;
     try {
         const user = await Signup.findOne({ email });
-        if (!user) {
-            return res.status(404).send("User not found");
-        }
-        if (user.password === password) {
+        //console.log(user)
+        if (user) {
+            
+            var isPasswordCorrect= await bcrypt.compare(password, user.password)
+            console.log(password,user.password);
+            if (isPasswordCorrect) {
             res.status(200).send("Login Successful");
-        } else {
-            res.status(401).send("Incorrect Password");
+        }
+        else{
+            res.status(200).send("Login Unsuccessful");
+        }
+        }
+         else {
+            res.status(401).send("User not found please signup!");
         }
     } catch (err) {
-        res.status(500).send("Error during login");
+        res.status(500).send({message:"Error during login"});
     }
 });
 
@@ -85,6 +93,20 @@ app.post('/updatedet', async (req, res) => {
     }
 });
 
+app.post('/delete', async (req, res) => {
+    try {
+        const deleteRec = await Signup.findOneAndDelete(
+            { userName: "abi06" },
+        );
+        if (!deleteRec) {
+            return res.status(404).send("Record not found");
+        }
+        console.log(updateRec)
+        res.json("Record Deleted");
+    } catch (err) {
+        res.status(500).send("Error deleting record");
+    }
+});
 
 app.listen(3001, () => {
     console.log("Server Started");
